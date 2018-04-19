@@ -1,6 +1,6 @@
 # 手动实现MVVM的原理以及双向绑定
 
-![Vue双向绑定](C:\Users\Administrator\Desktop\Vue双向绑定.jpg)
+![Vue双向绑定](https://github.com/huangchucai/MVVM-/blob/master/Vue%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A.jpg)
 
 ### 前言
 
@@ -123,21 +123,21 @@ function Observe(data) {
 
 1. 没有深度查看对象的时候，我们发现data里面的对象info就没有被监听
 
-   ![没有深度监听](C:\Users\Administrator\Desktop\没有深度监听.png)
+   ![没有深度监听](https://github.com/huangchucai/MVVM-/blob/master/%E6%B2%A1%E6%9C%89%E6%B7%B1%E5%BA%A6%E7%9B%91%E5%90%AC.png)
 
    当深度检查对象后，我们可以监听到data对象的内部对象，实现更好的数据监听
 
-![observe](C:\Users\Administrator\Desktop\observe.png)
+![observe](https://github.com/huangchucai/MVVM-/blob/master/observe.png)
 
 2. 为什么设置新值后也需要observe
 
    * 设置了set中的observe后我们可以对数据的改变也做到监听。
 
-   ![深度监听新对象](C:\Users\Administrator\Desktop\深度监听新对象.png)
+   ![深度监听新对象](https://github.com/huangchucai/MVVM-/blob/master/%E6%B7%B1%E5%BA%A6%E7%9B%91%E5%90%AC%E6%96%B0%E5%AF%B9%E8%B1%A1.png)
 
    * 没有设置的话，我们监听不到新的值
 
-     ![没有深度监听新对象](C:\Users\Administrator\Desktop\没有深度监听新对象.png)
+     ![没有深度监听新对象](https://github.com/huangchucai/MVVM-/blob/master/%E6%B2%A1%E6%9C%89%E6%B7%B1%E5%BA%A6%E7%9B%91%E5%90%AC%E6%96%B0%E5%AF%B9%E8%B1%A1.png)
 
 ### 2.数据代理
 
