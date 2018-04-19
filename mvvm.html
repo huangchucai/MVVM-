@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue双向绑定</title>
+</head>
+
+<body>
+  <div id="app">
+    <h1>{{info.name}}</h1>
+    <p>{{time}}毕业</p>
+    <p>年龄{{age}}</p>
+    <p>目前从事于{{info.work}}</p>
+    <p>希望您喜欢这篇文章--{{title}} </p>
+    来自于--{{info.name}}
+    <p>computed {{oldAge}}</p>
+    <input type="text" v-model="age">
+  </div>
+  <!--实现的mvvm-->
+  <script src="./mvvm.js"></script>
+  <script>
+    // 写法和Vue一样
+    let mvvm = new Mvvm({
+      el: '#app',
+      data: {
+        time: '2016年',
+        info: {
+          name: 'hcc',
+          work: 'web前端'
+        },
+        age: 25,
+        title: 'Vue双向绑定'
+      },
+      mounted() {
+        setTimeout(() => {
+          console.log('所有事情都搞定了');
+        }, 1000);
+      },
+      computed: {
+        oldAge() {
+          console.log(this.age)
+          return this.age + 1
+        },
+        youngAge: {
+          get() {
+            return this.age - 1
+          }
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
